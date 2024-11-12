@@ -1,17 +1,30 @@
-﻿Console.WriteLine("Please enter either 'a' or 'b'");
-string? userInput = Console.ReadLine();
-
-switch (userInput)
+﻿bool running = true;
+while (running)
 {
-  case "a":
-    Console.WriteLine("Running command 'a'");
-    break;
+  Console.WriteLine("Please choose 'list', 'lend', 'return' or 'exit'");
+  string? userInput = Console.ReadLine();
 
-  case "b":
-    Console.WriteLine("Running command 'b'");
-    break;
+  switch (userInput)
+  {
+    case "list":
+      Console.WriteLine("Listing available books");
+      break;
 
-  default:
-    Console.WriteLine("Unrecognized command!");
-    break;
+    case "lend":
+      Console.WriteLine("Lending a book");
+      break;
+
+    case "return":
+      Console.WriteLine("Returning a book");
+      break;
+
+    case "exit":
+      Console.WriteLine("Closing program");
+      running = false;
+      break;
+
+    default:
+      Console.WriteLine("Unrecognized command!");
+      break;
+  }
 }
