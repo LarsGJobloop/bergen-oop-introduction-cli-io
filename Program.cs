@@ -1,15 +1,17 @@
-﻿
-Book martian = new Book("Martian", "Jane Doe", new DateTime(2004, 10, 10));
+﻿Console.WriteLine("Please enter either 'a' or 'b'");
+string? userInput = Console.ReadLine();
 
-Console.WriteLine("Book title: " + martian.Title);
-Console.WriteLine("Author: " + martian.Author);
-Console.WriteLine("Book first published: " + martian.FirstPublished);
+switch (userInput)
+{
+  case "a":
+    Console.WriteLine("Running command 'a'");
+    break;
 
+  case "b":
+    Console.WriteLine("Running command 'b'");
+    break;
 
-Library library = new Library();
-
-Book? book1 = library.LendBook("Martian");
-Console.WriteLine("Lending book: " + book1.Title);
-
-Book? book2 = library.LendBook("Gang of Four");
-Console.WriteLine("Lending book: " + book2?.Title);
+  default:
+    Console.WriteLine("Unrecognized command!");
+    break;
+}
